@@ -7,7 +7,7 @@ RUN echo "Installing OpenJDK..." && \
 
 # Install BitTyrant
 RUN echo "Downloading BitTyrant..." && \
-    mkdir /azureus && \
+    mkdir azureus && \
     curl -# -L http://bittyrant.cs.washington.edu/dist_090607/BitTyrant-Linux64.tar.bz2 | tar -xj --strip 1 -C azureus
 
 # Copy the start script

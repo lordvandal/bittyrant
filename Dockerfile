@@ -27,7 +27,7 @@ RUN \
 
 # Generate and install favicons.
 RUN \
-    APP_ICON_URL=https://raw.githubusercontent.com/lordvandal/BitTyrant/main/bittyrant.png && \
+    APP_ICON_URL=https://raw.githubusercontent.com/lordvandal/bittyrant/main/bittyrant.png && \
     install_app_icon.sh "$APP_ICON_URL"
 
 # Set the name of the application

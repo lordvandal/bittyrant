@@ -3,12 +3,12 @@ FROM jlesage/baseimage-gui:alpine-3.12
 
 # Install JDK
 RUN echo "Installing OpenJDK..." && \
-    add-pkg openjdk11
+    add-pkg openjdk11 curl
 
 # Install BitTyrant
 RUN echo "Downloading BitTyrant..." && \
     mkdir /azureus && \
-    curl -# -L http://bittyrant.cs.washington.edu/dist_090607/BitTyrant-Linux64.tar.bz2 | tar -xj
+    curl -# -L http://bittyrant.cs.washington.edu/dist_090607/BitTyrant-Linux64.tar.bz2 | tar -xj --strip 1 -C azureus && \
 
 # Copy the start script
 COPY startapp.sh /startapp.sh

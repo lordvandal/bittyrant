@@ -10,7 +10,8 @@ RUN echo "Installing OpenJDK..." && \
 # Install BitTyrant
 RUN echo "Downloading BitTyrant..." && \
     mkdir azureus && \
-    curl -# -L http://bittyrant.cs.washington.edu/dist_090607/BitTyrant-Linux64.tar.bz2 | tar -xj --strip 1 -C azureus
+    curl -# -L http://bittyrant.cs.washington.edu/dist_090607/BitTyrant-Linux64.tar.bz2 | tar -xj --strip 1 -C azureus && \
+    chmod +x /azureus/azureus
 
 # Copy the start script
 COPY startapp.sh /startapp.sh

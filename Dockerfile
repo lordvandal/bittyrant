@@ -1,6 +1,8 @@
 # Pull base image
 FROM jlesage/baseimage-gui:alpine-3.12
 
+WORKDIR /
+
 # Install JDK
 RUN echo "Installing OpenJDK..." && \
     add-pkg openjdk11 curl
@@ -12,9 +14,11 @@ RUN echo "Downloading BitTyrant..." && \
 
 # Copy the start script
 COPY startapp.sh /startapp.sh
+RUN chmod +x /startapp.sh
 
 # Copy init.d file
 COPY bittyrant.sh /etc/cont-init.d/bittyrant.sh
+RUN chmod +x /etc/cont-init.d/bittyrant.sh
 
 # Adjust the openbox config.
 RUN \

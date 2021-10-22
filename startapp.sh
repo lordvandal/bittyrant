@@ -1,4 +1,4 @@
 #!/bin/bash
 export HOME=/config
-cd /azureus
-exec ./azureus
+cd /config
+exec /azureus/azureus

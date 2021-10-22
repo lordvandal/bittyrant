@@ -8,13 +8,13 @@ RUN echo "Installing OpenJDK..." && \
     add-pkg openjdk11 curl bash gtk+2.0
 
 # Change default shell from ash to bash
-RUN sed -i 's/\/bin\/ash/\/bin\/bash/g' /etc/passwd
+RUN sed-patch 's/\/bin\/ash/\/bin\/bash/g' /etc/passwd
 
 # Install BitTyrant
 RUN echo "Downloading BitTyrant..." && \
     mkdir azureus && \
     curl -# -L http://bittyrant.cs.washington.edu/dist_090607/BitTyrant-Linux64.tar.bz2 | tar -xj --strip 1 -C azureus && \
-    sed -i 's/JAVA_PROGRAM_DIR=\"/JAVA_PROGRAM_DIR=\"\/usr\/bin\//' /azureus/azureus &&\
+    sed-patch 's/JAVA_PROGRAM_DIR=\"/JAVA_PROGRAM_DIR=\"\/usr\/bin\//' /azureus/azureus &&\
     chmod +x /azureus/azureus
 
 # Copy the start script

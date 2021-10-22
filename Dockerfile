@@ -11,7 +11,7 @@ RUN echo "Installing OpenJDK..." && \
 RUN echo "Downloading BitTyrant..." && \
     mkdir azureus && \
     curl -# -L http://bittyrant.cs.washington.edu/dist_090607/BitTyrant-Linux64.tar.bz2 | tar -xj --strip 1 -C azureus && \
-    sed -i '0,/JAVA_PROGRAM_DIR="/{s//JAVA_PROGRAM_DIR="\/usr\/bin\//}' /azureus/azureus &&\
+    sed -i 's/JAVA_PROGRAM_DIR=\"/JAVA_PROGRAM_DIR=\"\/usr\/bin\//' /azureus/azureus &&\
     chmod +x /azureus/azureus
 
 # Copy the start script

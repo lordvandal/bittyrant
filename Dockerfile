@@ -5,7 +5,10 @@ WORKDIR /
 
 # Install JDK
 RUN echo "Installing OpenJDK..." && \
-    add-pkg openjdk11 curl
+    add-pkg openjdk11 curl bash
+
+# Change default shell from ash to bash
+RUN sed -i 's/\/bin\/ash/\/bin\/bash/g' /etc/passwd
 
 # Install BitTyrant
 RUN echo "Downloading BitTyrant..." && \

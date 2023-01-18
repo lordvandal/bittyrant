@@ -1,5 +1,5 @@
 # Pull base image
-FROM jlesage/docker-baseimage-gui:alpine-3.17
+FROM jlesage/baseimage-gui:alpine-3.17
 
 WORKDIR /
 

@@ -9,11 +9,11 @@ on:
   #schedule:
   #  - cron: '21 5 * * *'
   push:
-    branches: [ main ]
+    branches: [ latest ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
   pull_request:
-    branches: [ main ]
+    branches: [ latest ]
 
 concurrency: 
   group: ${{ github.ref }}

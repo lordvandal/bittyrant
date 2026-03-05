@@ -1,13 +1,16 @@
 {
   "extends": [
-    "config:base", ":dependencyDashboard"
+    "config:recommended",
+    ":dependencyDashboard"
   ],
   "platformAutomerge": true,
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "ignoreTests": true,
       "automerge": true
-      // "automergeType": branch
     }
-  ]
+  ],
+  "rollbackPrs": true,
+  "forkProcessing": "enabled"
 }
